@@ -1,0 +1,273 @@
+body{
+    background: rgb(32, 36, 28);
+}
+
+h1{
+    font-size: 200%;
+    color:burlywood;
+}
+
+.digital-clock-container{
+    display:flex;
+}
+
+.digital-clock{
+    color:white;
+    font-size:30px;
+}
+
+.digital-clock.minutes::after{
+    animation-timing-function: steps(1);
+    content:'00:';
+    animation-iteration-count: infinite;
+    animation-name: minuteFrames;
+    animation-duration: 3600s;
+}
+
+.digital-clock.seconds::after{
+    animation-timing-function: steps(1);
+    content:'00';
+    animation-name: secondFrames;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+}
+
+.digital-clock.hours::after{
+    animation-timing-function: steps(1);
+    content:'00:';
+    animation-iteration-count: infinite;
+    animation-name: hourFrames;
+    animation-duration: calc(12*3600s);
+}
+
+.analog-clock-container{
+    border: 5px solid white;
+    border-radius: 100%;
+    width:400px;
+    height:400px;
+    position: relative;
+}
+
+.center{
+    border-radius: 100%;
+    width:20px;
+    height:20px;
+    background:white;
+    position:absolute;
+    top:47.5%;
+    left:47.5%;
+}
+
+.analog-clock.hours{
+    background: rgb(142, 151, 9);
+    width: 30px;
+    height:130px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transform-origin: left bottom;
+    position:absolute;
+    top : 70px;
+    left : 185px;
+    animation: analog-time-frames;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: calc(12*3600s);
+}
+
+.analog-clock.minutes{
+    background: rgb(9, 111, 151);
+    width: 15px;
+    height:165px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transform-origin: left bottom;
+    top : 35px;
+    left : 192.5px;
+    position:absolute;
+    animation-name: analog-time-frames;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 3600s;
+}
+
+.analog-clock.seconds{
+    animation-timing-function: steps(60);
+    background: rgb(151, 26, 9);
+    width: 2px;
+    height:185px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transform-origin: left bottom;
+    top : 15px;
+    left : 199px;
+    position:absolute;
+    animation-name: analog-time-frames;
+    animation-iteration-count: infinite;
+    animation-duration: 60s;
+}
+
+/* 7:15:25 */
+
+.analog-clock.seconds{
+    animation-delay: -25s;
+}
+
+.analog-clock.minutes{
+    animation-delay: calc(15 * -60s);
+}
+
+.analog-clock.hours{
+    animation-delay:  calc(7 * -3600s);
+}
+
+@keyframes analog-time-frames{
+    from{
+        transform: rotate(0) 
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+
+
+@keyframes hourFrames{
+    0.0% { content: '00:' ; }
+    8.333333333333334% { content: '01:' ; }
+    16.666666666666668% { content: '02:' ; }
+    25.0% { content: '03:' ; }
+    33.333333333333336% { content: '04:' ; }
+    41.66666666666667% { content: '05:' ; }
+    50.0% { content: '06:' ; }
+    58.333333333333336% { content: '07:' ; }
+    66.66666666666667% { content: '08:' ; }
+    75.0% { content: '09:' ; }
+    83.33333333333334% { content: '10:' ; }
+    91.66666666666667% { content: '11:' ; }
+}
+
+@keyframes secondFrames{
+    0.0% { content: '00' ; }
+    1.6666666666666667% { content: '01' ; }
+    3.3333333333333335% { content: '02' ; }
+    5.0% { content: '03' ; }
+    6.666666666666667% { content: '04' ; }
+    8.333333333333334% { content: '05' ; }
+    10.0% { content: '06' ; }
+    11.666666666666668% { content: '07' ; }
+    13.333333333333334% { content: '08' ; }
+    15.0% { content: '09' ; }
+    16.666666666666668% { content: '10' ; }
+    18.333333333333336% { content: '11' ; }
+    20.0% { content: '12' ; }
+    21.666666666666668% { content: '13' ; }
+    23.333333333333336% { content: '14' ; }
+    25.0% { content: '15' ; }
+    26.666666666666668% { content: '16' ; }
+    28.333333333333336% { content: '17' ; }
+    30.0% { content: '18' ; }
+    31.666666666666668% { content: '19' ; }
+    33.333333333333336% { content: '20' ; }
+    35.0% { content: '21' ; }
+    36.66666666666667% { content: '22' ; }
+    38.333333333333336% { content: '23' ; }
+    40.0% { content: '24' ; }
+    41.66666666666667% { content: '25' ; }
+    43.333333333333336% { content: '26' ; }
+    45.0% { content: '27' ; }
+    46.66666666666667% { content: '28' ; }
+    48.333333333333336% { content: '29' ; }
+    50.0% { content: '30' ; }
+    51.66666666666667% { content: '31' ; }
+    53.333333333333336% { content: '32' ; }
+    55.0% { content: '33' ; }
+    56.66666666666667% { content: '34' ; }
+    58.333333333333336% { content: '35' ; }
+    60.0% { content: '36' ; }
+    61.66666666666667% { content: '37' ; }
+    63.333333333333336% { content: '38' ; }
+    65.0% { content: '39' ; }
+    66.66666666666667% { content: '40' ; }
+    68.33333333333334% { content: '41' ; }
+    70.0% { content: '42' ; }
+    71.66666666666667% { content: '43' ; }
+    73.33333333333334% { content: '44' ; }
+    75.0% { content: '45' ; }
+    76.66666666666667% { content: '46' ; }
+    78.33333333333334% { content: '47' ; }
+    80.0% { content: '48' ; }
+    81.66666666666667% { content: '49' ; }
+    83.33333333333334% { content: '50' ; }
+    85.0% { content: '51' ; }
+    86.66666666666667% { content: '52' ; }
+    88.33333333333334% { content: '53' ; }
+    90.0% { content: '54' ; }
+    91.66666666666667% { content: '55' ; }
+    93.33333333333334% { content: '56' ; }
+    95.0% { content: '57' ; }
+    96.66666666666667% { content: '58' ; }
+    98.33333333333334% { content: '59' ; }
+}
+
+@keyframes minuteFrames{
+    0.0% { content: '00:' ; }
+    1.6666666666666667% { content: '01:' ; }
+    3.3333333333333335% { content: '02:' ; }
+    5.0% { content: '03:' ; }
+    6.666666666666667% { content: '04:' ; }
+    8.333333333333334% { content: '05:' ; }
+    10.0% { content: '06:' ; }
+    11.666666666666668% { content: '07:' ; }
+    13.333333333333334% { content: '08:' ; }
+    15.0% { content: '09:' ; }
+    16.666666666666668% { content: '10:' ; }
+    18.333333333333336% { content: '11:' ; }
+    20.0% { content: '12:' ; }
+    21.666666666666668% { content: '13:' ; }
+    23.333333333333336% { content: '14:' ; }
+    25.0% { content: '15:' ; }
+    26.666666666666668% { content: '16:' ; }
+    28.333333333333336% { content: '17:' ; }
+    30.0% { content: '18:' ; }
+    31.666666666666668% { content: '19:' ; }
+    33.333333333333336% { content: '20:' ; }
+    35.0% { content: '21:' ; }
+    36.66666666666667% { content: '22:' ; }
+    38.333333333333336% { content: '23:' ; }
+    40.0% { content: '24:' ; }
+    41.66666666666667% { content: '25:' ; }
+    43.333333333333336% { content: '26:' ; }
+    45.0% { content: '27:' ; }
+    46.66666666666667% { content: '28:' ; }
+    48.333333333333336% { content: '29:' ; }
+    50.0% { content: '30:' ; }
+    51.66666666666667% { content: '31:' ; }
+    53.333333333333336% { content: '32:' ; }
+    55.0% { content: '33:' ; }
+    56.66666666666667% { content: '34:' ; }
+    58.333333333333336% { content: '35:' ; }
+    60.0% { content: '36:' ; }
+    61.66666666666667% { content: '37:' ; }
+    63.333333333333336% { content: '38:' ; }
+    65.0% { content: '39:' ; }
+    66.66666666666667% { content: '40:' ; }
+    68.33333333333334% { content: '41:' ; }
+    70.0% { content: '42:' ; }
+    71.66666666666667% { content: '43:' ; }
+    73.33333333333334% { content: '44:' ; }
+    75.0% { content: '45:' ; }
+    76.66666666666667% { content: '46:' ; }
+    78.33333333333334% { content: '47:' ; }
+    80.0% { content: '48:' ; }
+    81.66666666666667% { content: '49:' ; }
+    83.33333333333334% { content: '50:' ; }
+    85.0% { content: '51:' ; }
+    86.66666666666667% { content: '52:' ; }
+    88.33333333333334% { content: '53:' ; }
+    90.0% { content: '54:' ; }
+    91.66666666666667% { content: '55:' ; }
+    93.33333333333334% { content: '56:' ; }
+    95.0% { content: '57:' ; }
+    96.66666666666667% { content: '58:' ; }
+    98.33333333333334% { content: '59:' ; }
+}

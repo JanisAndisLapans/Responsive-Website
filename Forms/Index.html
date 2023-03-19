@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Forms
+        </title>
+        <script src="Script.js"></script>
+    </head>
+    <body style="display: flex; justify-content: center;">
+        <form id="searchForm" action="https://google.com/search" target="_blank" method="get">
+            <label>
+                Meklēšanas ieraksts
+            </label>
+            <br>
+            <input type="text" name="q">
+            <br>
+            <label>
+                Valsts
+            </label>
+            <br>
+            <select name="cr">
+                <option value=""> Visas </option>
+                <option value="countryGB"> Apvienotā Karaliste </option>
+                <option value="countryLV"> Latvija </option>
+                <option value="countryUS"> ASV </option>
+                <option value="countryRU"> Krievija </option>
+                <option value="countrySA"> Saūda Arābija </option>
+            </select>
+            <br>
+            <label>
+                No gada:
+            </label>
+            <input id="yearFrom" type="number" name="q">
+            <br>
+            <label>
+                Līdz gadam:
+            </label>
+            <input id="yearTo" type="number" name="q">
+            <br>
+            <input type="button" value="IESNIEGT" onclick="onSubmit()">
+        </form>
+    </body>
+</html>

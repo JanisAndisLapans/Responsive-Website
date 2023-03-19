@@ -1,0 +1,54 @@
+body{
+    background-color: coral;
+    display: flex;
+}
+
+.box{
+    width:15vw;
+    height:30vh;
+    background-color: brown;
+    border:2px solid black;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height:60vh;
+    width:40vw;
+    border: 5px solid black;
+}
+
+.box-1:hover + .container .box:first-child{
+    background-color: yellow;
+}
+
+.box-2:active + .box{
+    background-color: yellow;
+}
+
+.box-5:hover::after{
+    content: '';
+    display: block;
+    position: absolute;
+    transform: translate(-21.72vw,-15vh);
+    height:60vh;
+    width:40vw;
+    background-color: yellow;
+    z-index: -1;
+}
+
+.box-4:hover::after{
+    content: '';
+    display: block;
+    transform: translateX(-40.88vw);
+    width:15vw;
+    height:30vh;
+    background-color: yellow;
+}
+
+/* CSS4
+.container:has(.box-5:hover) +.container>.box-2{
+    background-color: yellow;
+}
+*/
